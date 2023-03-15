@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto</title>
+    <link rel="stylesheet" href="./main.css">
     <style>
         table,th,tr,td{
             border:solid 1px black;
@@ -13,13 +14,24 @@
     </style>
 </head>
 <body>
-    <p>Digita el numero</p>
-    <p>Debe ser de 4 cifras</p>
-    Numero <input type="text" id="numero"><br>
-    <br>
-    <button type="submit" id="agregar">Agregar</button>
-    <div style="margin-top: 15px;"></div>
-    <div id="pantalla"></div>
+    <div class="titulo">
+        <h1>PICAS Y FIJAS</h1>
+    </div>
+    <div class="contenedor">
+        <div class="texto">
+            <h3>Digita el numero</h3>
+            <p>*Debe ser de 4 cifras</p>
+        </div>
+        <div class="input">
+            <label for="numero">Numero</label>
+            <input type="text" id="numero">
+        </div>
+        <div class="boton">
+            <button type="submit" id="agregar">Agregar</button>
+        </div>
+        <!-- <div style="margin-top: 15px;"></div> -->
+        <div id="pantalla"></div>
+    </div>
 </body>
 <script src="proyecto.js"></script>
 </html>
