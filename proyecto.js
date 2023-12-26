@@ -35,42 +35,59 @@ function valores(){ // con esta función las posiciones se comparan entre el num
     })
 }
 
-agregar.addEventListener('click',()=>{
-    number=numeros.value
-    list.push(number)
-    valores()
-    if (number[0]==number[1] || number[0]==number[2] || number[0]==number[3] || number[1]==number[2] || number[1]==number[3] || number[2]==number[3]){
-        alert('Todos los digitos deben ser diferentes') // Se valida que todos los digitos sean diferentes
-        numeros.value=''
-    }else if(number.length>=5 || number.length<4){
-        alert('El numero solo puede ser de 4 digitos') // Se valida que el numero sea de 4 digitos, ni mas ni menos
-        numeros.value=''
-    }else if(number[0]==0){
-        alert('El primer numero no puede ser 0') // Se valida que el primer digito que pone el jugador no sea 0
-        numeros.value=''
-    }else if ((number[0]=='.' || number[0]=='-') || (number[1]=='.' || number[1]=='-') || (number[2]=='.' || number[2]=='-') || (number[3]=='.' || number[3]=='-')){
-        alert('Los digitos deben ser numeros') // Se valida que en ninguna posicion del numero, haya un '.' o una '-'
-        numeros.value=''
-    }
-    else if(fijas==4){
-        let ganador=''
-        ganador=(`Haz ganado el juego con ${cont} intentos`) 
-    document.getElementById('pantalla').innerHTML=ganador
-    }else{
-        picasyfijas.push({fijas,picas})
-        console.log(picasyfijas)
-        cont+=1
-        var contenido=''
-        contenido+=`<table>`
-        contenido+=`<th>Número</th><th>Fijas</th><th>Picas</th>`
-        for (i=0;i<picasyfijas.length;i++){ // Por cada numero que pone el jugador, se genera una nueva fila con el numero, las picas, y las fijas
-            contenido+=`<tr><td>${list[i]}</td>`
-            contenido+=`<td>${picasyfijas[i].fijas}</td>`
-            contenido+=`<td>${picasyfijas[i].picas}</td></tr>`
+window.addEventListener('keydown',function(event){
+    if (event.key=='Enter'){
+        number=numeros.value
+        list.push(number)
+        valores()
+        if (number[0]==number[1] || number[0]==number[2] || number[0]==number[3] || number[1]==number[2] || number[1]==number[3] || number[2]==number[3]){
+            alert('Todos los digitos deben ser diferentes') // Se valida que todos los digitos sean diferentes
             numeros.value=''
-            picas=0
-            fijas=0
-    document.getElementById('pantalla').innerHTML=contenido
+        }else if(number.length>=5 || number.length<4){
+            alert('El numero solo puede ser de 4 digitos') // Se valida que el numero sea de 4 digitos, ni mas ni menos
+            numeros.value=''
+        }else if(number[0]==0){
+            alert('El primer numero no puede ser 0') // Se valida que el primer digito que pone el jugador no sea 0
+            numeros.value=''
+        }else if ((number[0]=='.' || number[0]=='-') || (number[1]=='.' || number[1]=='-') || (number[2]=='.' || number[2]=='-') || (number[3]=='.' || number[3]=='-')){
+            alert('Los digitos deben ser numeros') // Se valida que en ninguna posicion del numero, haya un '.' o una '-'
+            numeros.value=''
+        }
+        else if(fijas==4){
+            picasyfijas.push({fijas,picas})
+            console.log(picasyfijas)
+            cont+=1
+            var contenido=''
+            contenido+=`<table>`
+            contenido+=`<th>Número</th><th>Fijas</th><th>Picas</th>`
+            for (i=0;i<picasyfijas.length;i++){ // Por cada numero que pone el jugador, se genera una nueva fila con el numero, las picas, y las fijas
+                contenido+=`<tr><td>${list[i]}</td>`
+                contenido+=`<td>${picasyfijas[i].fijas}</td>`
+                contenido+=`<td>${picasyfijas[i].picas}</td></tr>`
+                numeros.value=''
+                picas=0
+                fijas=0
+        document.getElementById('pantalla').innerHTML=contenido
+            }
+            let ganador=''
+            ganador=(`Haz ganado el juego con ${cont} intentos`) 
+        document.getElementById('pantalla').innerHTML=ganador
+        }else{
+            picasyfijas.push({fijas,picas})
+            console.log(picasyfijas)
+            cont+=1
+            var contenido=''
+            contenido+=`<th>Número</th><th>Fijas</th><th>Picas</th>`
+            for (i=0;i<picasyfijas.length;i++){ // Por cada numero que pone el jugador, se genera una nueva fila con el numero, las picas, y las fijas
+                contenido+=`<tr><td>${list[i]}</td>`
+                contenido+=`<td>${picasyfijas[i].fijas}</td>`
+                contenido+=`<td>${picasyfijas[i].picas}</td></tr>`
+                numeros.value=''
+                picas=0
+                fijas=0
+                document.getElementById('pantalla').innerHTML=contenido
+            }
         }
     }
+    
 })

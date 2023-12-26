@@ -6,48 +6,68 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+html,body,main{
     width: 100%;
     height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-body{
-    background-color: aquamarine;
+main{
+    background-color: rgb(255, 250, 240);
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-.contenedor{
-    background-color: aliceblue;
-    width: 70%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
     align-items: center;
 }
 .titulo{
-    /* margin-bottom: 15px; */
     width: 100%;
-    height: 10%;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Rampart One', cursive;
+    margin-top: 8px;
+}
+.container{
+    padding: 15px;
+    text-align: center;
+    height: 95%;
+    width: 100%;
+}
+
+#texto{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#table{
+	width: 100%;
+	border-radius: 20px;
+    height:fit-content;
+    margin-top: 15px;
+    padding-top: 20px;
+	background: #fdfcfc;
+	box-shadow: 4px 4px 3px rgba(0, 0, 0, .05);
+}
+#example{
+    background: white;
 }
 .input{
-    width: 90%;
+    width: 100%;
     display: flex;
     margin-bottom: 10px;
-    height: 15%;
+    justify-content: center;
+    height: 4.5%;
     align-items: center;
 }
+
 #numero{
-    width: 90%;
-    height: 40%;
+    width: 30vw;
+    height: 100%;
+    border: 1px solid gray;
     margin-left: 15px;
+    border-radius: 8px;
 }
+/*
 h3{
-    /* margin-bottom: 14px; */
     font-family: 'Oleo Script', cursive;
     letter-spacing: 1px;
     font-size: larger;
@@ -73,13 +93,7 @@ p{
     width: 90%;
     height: 50%;
 }
-/* #pantalla{
-    height: 65%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-} */
 th,td,tr{
     width: 2%;
     height: 2%;
-}
+} */
