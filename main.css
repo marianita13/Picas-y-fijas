@@ -10,9 +10,10 @@ html,body,main{
     width: 100%;
     height: 100%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
 }
 main{
-    background-color: rgb(255, 250, 240);
+    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,18 +39,6 @@ main{
     flex-direction: column;
     gap: 25px;
 }
-#table{
-	width: 100%;
-	border-radius: 20px;
-    height:fit-content;
-    margin-top: 15px;
-    padding-top: 20px;
-	background: #fdfcfc;
-	box-shadow: 4px 4px 3px rgba(0, 0, 0, .05);
-}
-#example{
-    background: white;
-}
 .input{
     width: 100%;
     display: flex;
@@ -66,34 +55,3 @@ main{
     margin-left: 15px;
     border-radius: 8px;
 }
-/*
-h3{
-    font-family: 'Oleo Script', cursive;
-    letter-spacing: 1px;
-    font-size: larger;
-}
-.texto{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 10%;
-    align-items: center;
-}
-p{
-    font-size:small;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-.boton{
-    display: flex;
-    width: 90%;
-    justify-content: center;
-    height: 10%;
-}
-#agregar{
-    width: 90%;
-    height: 50%;
-}
-th,td,tr{
-    width: 2%;
-    height: 2%;
-} */
